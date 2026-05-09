@@ -1,6 +1,5 @@
 import logging
 import shlex
-import subprocess
 import time
 
 from agent_core.state import Tool

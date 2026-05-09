@@ -8,7 +8,6 @@ from langchain_core.runnables import Runnable
 
 from target_scan_agent.state import (
     TargetScanState,
-    Tool,
     ToolType,
     get_tools,
 )

@@ -113,7 +113,7 @@ class TestFfufIntegration:
                 print(f"  - {config['url']}")
 
         if largest_findings:
-            print(f"Largest responses:")
+            print("Largest responses:")
             for finding in largest_findings:
                 length = finding["length"]
                 if length < 1024:
@@ -141,7 +141,7 @@ class TestFfufIntegration:
             extensions="html,json,txt",  # Limited extensions for faster scan
         )
 
-        print(f"\n📊 ffuf scan results:")
+        print("\n📊 ffuf scan results:")
         print("=" * 50)
 
         # Basic validation
@@ -170,13 +170,13 @@ class TestFfufIntegration:
         if not self.is_ffuf_available():
             pytest.skip("ffuf not available")
 
-        print(f"\n🎯 Testing ffuf with invalid wordlist...")
+        print("\n🎯 Testing ffuf with invalid wordlist...")
 
         result = await ffuf_directory_scan(
             target="http://example.com", wordlist_type="nonexistent", extensions="php"
         )
 
-        print(f"\n📊 ffuf error handling:")
+        print("\n📊 ffuf error handling:")
         print("=" * 50)
 
         # Should return error result
@@ -196,7 +196,6 @@ class TestFfufIntegration:
         """Test that Pydantic models work correctly with sample data."""
         from src.target_scan_agent.tools.enumeration.models import (
             FfufFinding,
-            FfufScanResult,
         )
 
         # Test FfufFinding model

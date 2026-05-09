@@ -1,6 +1,5 @@
 import logging
 from dataclasses import dataclass
-from typing import Literal
 
 from langchain_core.messages import AIMessage
 

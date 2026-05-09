@@ -1,6 +1,6 @@
 import json
 from langchain_core.language_models import BaseChatModel
-from langchain_core.messages import AIMessage, SystemMessage
+from langchain_core.messages import SystemMessage
 
 from scan_agent.state import ScanAgentState
 from scan_agent.state.scan_agent_state import ScanAgentSummary

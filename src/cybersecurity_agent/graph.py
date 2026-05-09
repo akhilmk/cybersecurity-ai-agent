@@ -3,8 +3,6 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.state import CompiledStateGraph
 
-from scan_agent.graph import create_scan_graph
-from attack_agent.graph import create_attack_graph
 from cybersecurity_agent.node import ScanAgentNode, AttackAgentNode, CybersecuritySummaryNode
 from cybersecurity_agent.state import CybersecurityAgentState
 

@@ -1,45 +1,59 @@
 # Cyber Security AI Agent
 
-**Project Target:** learn LangGraph by building real world AI Agent
+An experimental project to learn **LangGraph** by building a real-world multi-agent cybersecurity system.
 
-**Requirements:**
-- Scan Web application or REST API to find most common vulnerabilities 
-- Generate a report with vulnerabilities and potential places for improvements
-- User enters URL in CLI and then AI Agent starts scanning web app
-- Report shows in CLI stdout
-- *Optional:* build simple web ui for this agent. Or instead of CLI build web ui. 
+> Based on [vitalii-honchar/cybersecurity-ai-agent](https://github.com/vitalii-honchar/cybersecurity-ai-agent).
 
-## Implementation
+## 🚀 Quick Start (UV)
 
-- `src/agent_core/` - common code for all agents
-- `src/scan_agent/` - ReAct agent that scans target for vulnerabilities
-- `src/attack_agent/` - ReAct agent that attacks target to find vulnerabilities
-- `src/cybersecurity_agent/` - chain of agent graph which combines scan and attack agents
-- `src/target_scan_agent/` - **OUTDATED** first attempt of agent implementation
+This project uses [uv](https://docs.astral.sh/uv/) for high-performance package management.
 
-## **[OUTDATED]** System Design 
+### Installation
+```bash
+# Clone the repository
+git clone git@github.com:akhilmk/cybersecurity-ai-agent.git
+cd cybersecurity-ai-agent
 
-## AI Agent Architecture
+# Install dependencies and create venv
+uv sync --group dev
+```
 
-![AI Agent Architecture](/docs/ai-agent-architecture.png)
+### Development
+```bash
+# Run tests
+uv run pytest
 
-### Expert Agent Creation
+# Format code
+uv run ruff check --select I --fix .
+```
 
-![Expert Agent Creation](/docs/expert-agent-creation.png)
+## 🏗️ Architecture
 
+The system is built as a graph of specialized agents:
 
-### Target Scan Agent
-![Target Scan Agent](/docs/target-scan-agent.png)
+- `src/agent_core/` - Shared abstractions and base classes.
+- `src/scan_agent/` - ReAct agent focused on reconnaissance and target discovery.
+- `src/attack_agent/` - ReAct agent focused on vulnerability exploitation.
+- `src/cybersecurity_agent/` - The orchestrator graph that coordinates the workflow.
 
-### Penetration Agent
+> [!NOTE]
+> `src/target_scan_agent/` is a legacy implementation preserved for reference.
 
-![Penetration Agent](/docs/penetration-agent.png)
+## 🔗 Upstream & Fresh Start
 
-### Summary Generation
+This repository was initialized as a fresh start from the original source.
 
-![Summary Generation](/docs/summary-generation.png)
+**Original Author:** [Vitalii Honchar](https://github.com/vitalii-honchar)  
+**Original Repo:** [cybersecurity-ai-agent](https://github.com/vitalii-honchar/cybersecurity-ai-agent.git)
+
+To pull latest updates from the original source:
+```bash
+git remote add upstream https://github.com/vitalii-honchar/cybersecurity-ai-agent.git
+git fetch upstream
+git merge upstream/main --allow-unrelated-histories
+```
 
 ## AI Agent Patterns
-
-- Mixture of Experts
-- ReAct
+- Mixture of Experts (MoE)
+- ReAct (Reasoning and Acting)
+- LangGraph Workflows

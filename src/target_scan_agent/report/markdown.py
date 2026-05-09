@@ -1,8 +1,5 @@
 from target_scan_agent.state import (
-    AttackVector,
-    ExposedData,
     TargetScanOutput,
-    Vulnerability,
 )
 
 
@@ -302,8 +299,8 @@ def create_markdown_report(scan_results: TargetScanOutput) -> str:
         for i, evidence in enumerate(scan_results.technical_evidence, 1):
             report.append(f"### Evidence #{i}: {evidence.tool_name}")
             report.append("")
-            report.append(f"**Command Executed:**")
-            report.append(f"```bash")
+            report.append("**Command Executed:**")
+            report.append("```bash")
             report.append(evidence.command_executed)
             report.append("```")
             report.append("")

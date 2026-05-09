@@ -8,8 +8,6 @@ from langchain_openai import ChatOpenAI
 from target_scan_agent.state import (
     TargetScanOutput,
     TargetScanState,
-    ToolType,
-    get_tools,
 )
 
 system_prompt = """You are a senior penetration tester creating a comprehensive security report. Generate a detailed, professional security assessment based on the provided scan and attack results.

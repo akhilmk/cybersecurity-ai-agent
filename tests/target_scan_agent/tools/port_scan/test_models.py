@@ -1,4 +1,3 @@
-import pytest
 
 from src.target_scan_agent.tools.port_scan.models import (
     NmapHost,

@@ -1,14 +1,12 @@
 import json
 import logging
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
 
 from langchain_core.language_models import LanguageModelInput
-from langchain_core.messages import AIMessage, BaseMessage, SystemMessage
+from langchain_core.messages import BaseMessage, SystemMessage
 from langchain_core.runnables import Runnable
 
 from agent_core.state import ReActAgentState
-from target_scan_agent.state import get_tools
 
 system_prompt = """
 You are an agent that should act as specified in escaped content <BEHAVIOR></BEHAVIOR>.

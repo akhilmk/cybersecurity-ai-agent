@@ -1,5 +1,4 @@
 import logging
-import subprocess
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime
@@ -65,7 +64,7 @@ async def nmap_port_scan_tool(
         return result
 
     except Exception as e:
-        logging.error(f"Error during nmap scan: %s", e)
+        logging.error("Error during nmap scan: %s", e)
         return NmapScanResult.create_error(f"Nmap scan failed: {str(e)}")
     finally:
         terminate_process(process)
@@ -143,7 +142,6 @@ def _parse_xml_output(
         hosts_down = 0
 
         # Parse scan info
-        scan_info = root.find("scaninfo")
         start_time = None
         end_time = None
 

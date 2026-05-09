@@ -1,13 +1,10 @@
 import logging
 from dataclasses import dataclass
-from typing import Literal
 
 from langchain_core.messages import AIMessage
 
 from target_scan_agent.state import (
     TargetScanState,
-    Tool,
-    ToolsCalls,
     ToolType,
     get_tools,
 )

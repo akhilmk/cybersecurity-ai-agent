@@ -1,5 +1,4 @@
 from pydantic import BaseModel, Field
-from typing import Optional
 
 from agent_core.state import Target
 from scan_agent.state.scan_agent_state import ScanAgentSummary

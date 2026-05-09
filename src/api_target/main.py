@@ -6,16 +6,12 @@ DO NOT use in production or expose to the internet.
 
 import base64
 import hashlib
-import os
-import secrets
-import sqlite3
 import subprocess
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from fastapi import Depends, FastAPI, HTTPException, Request, Response
-from fastapi.responses import HTMLResponse, JSONResponse
-from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from fastapi import FastAPI, HTTPException
+from fastapi.security import HTTPBasic
 from pydantic import BaseModel
 
 # Initialize FastAPI app

@@ -1,6 +1,5 @@
-from unittest.mock import MagicMock, Mock
+from unittest.mock import Mock
 
-import pytest
 from langchain_core.messages import AIMessage
 
 from target_scan_agent.node.assistant import AssistantNode

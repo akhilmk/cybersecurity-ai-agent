@@ -1,6 +1,5 @@
 import logging
 import shlex
-import subprocess
 import time
 
 from target_scan_agent.tools.common.process_utils import (
@@ -198,7 +197,7 @@ async def curl_tool(curl_args: str, timeout: int = 60) -> dict:
         try:
             safe_args = _safe_split_args(curl_args) if curl_args else []
             command_str = " ".join(["curl", "-i"] + safe_args)
-        except:
+        except Exception:
             command_str = f"curl -i {curl_args}" if curl_args else "curl"
 
         return CurlResult.create_error(

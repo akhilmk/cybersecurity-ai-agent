@@ -91,7 +91,7 @@ class TestNmapIntegration:
             timeout=60,
         )
 
-        print(f"\n📊 Nmap scan results:")
+        print("\n📊 Nmap scan results:")
         print("=" * 50)
 
         # Validate results
@@ -125,7 +125,7 @@ class TestNmapIntegration:
             timeout=60,
         )
 
-        print(f"\n📊 Nmap TCP scan results:")
+        print("\n📊 Nmap TCP scan results:")
         print("=" * 50)
 
         # Validate results
@@ -159,7 +159,7 @@ class TestNmapIntegration:
             timeout=90,
         )
 
-        print(f"\n📊 Nmap port range scan results:")
+        print("\n📊 Nmap port range scan results:")
         print("=" * 50)
 
         # Validate results
@@ -174,7 +174,7 @@ class TestNmapIntegration:
         if not self.is_nmap_available():
             pytest.skip("Nmap not available")
 
-        print(f"\n🎯 Testing nmap ping scan against localhost")
+        print("\n🎯 Testing nmap ping scan against localhost")
 
         # Run nmap ping scan
         result = await nmap_port_scan_tool(
@@ -183,7 +183,7 @@ class TestNmapIntegration:
             timeout=30,
         )
 
-        print(f"\n📊 Nmap ping scan results:")
+        print("\n📊 Nmap ping scan results:")
         print("=" * 50)
 
         # Validate results
@@ -194,7 +194,7 @@ class TestNmapIntegration:
             localhost_host = result.hosts[0]
             assert localhost_host.ip == "127.0.0.1"
             assert localhost_host.state == "up"
-            print(f"  ✅ Localhost detected as up")
+            print("  ✅ Localhost detected as up")
 
         print("=" * 50)
         print("✅ Ping scan test completed!")
@@ -205,7 +205,7 @@ class TestNmapIntegration:
         if not self.is_nmap_available():
             pytest.skip("Nmap not available")
 
-        print(f"\n🎯 Testing nmap scan against non-existent host")
+        print("\n🎯 Testing nmap scan against non-existent host")
 
         # Run nmap scan against non-existent host
         result = await nmap_port_scan_tool(
@@ -215,7 +215,7 @@ class TestNmapIntegration:
             timeout=30,
         )
 
-        print(f"\n📊 Nmap scan results for non-existent host:")
+        print("\n📊 Nmap scan results for non-existent host:")
         print("=" * 50)
 
         # Should complete without error even if no hosts found

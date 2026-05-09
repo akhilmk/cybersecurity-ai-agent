@@ -1,10 +1,7 @@
-import asyncio
 import json
-from concurrent.futures import ThreadPoolExecutor
 from pprint import pprint
 from typing import Any
 
-from langchain_core.messages import AIMessage
 from langchain_core.runnables.config import RunnableConfig
 from langchain_openai import ChatOpenAI
 from langgraph.checkpoint.memory import MemorySaver
@@ -24,8 +21,6 @@ from target_scan_agent.tools import (
     curl_tool,
     ffuf_directory_scan,
     flexible_http_tool,
-    nmap_port_scan_tool,
-    nuclei_scan_tool,
 )
 
 
@@ -144,7 +139,7 @@ def extract_event_details(event):
 def print_event_details(event_details):
     """Print event details in a formatted way"""
     print(f"🔍 NODE/EDGE: {event_details['node_or_edge_name']}")
-    print(f"📝 MESSAGE CONTENT:")
+    print("📝 MESSAGE CONTENT:")
 
     # Handle long content by truncating
     content = event_details["message_content"]
@@ -152,7 +147,7 @@ def print_event_details(event_details):
         content = content[:500] + "... [TRUNCATED]"
     print(f"   {content}")
 
-    print(f"🔧 TOOL CALLING:")
+    print("🔧 TOOL CALLING:")
     if event_details["tool_calls"]:
         for i, tool_call in enumerate(event_details["tool_calls"], 1):
             print(f"   Tool {i}:")
@@ -164,7 +159,7 @@ def print_event_details(event_details):
     else:
         print("   No tool calls")
 
-    print(f"📊 CURRENT STATE INFO:")
+    print("📊 CURRENT STATE INFO:")
     for key, value_info in event_details["state_info"].items():
         print(f"   {key}: {value_info}")
 
