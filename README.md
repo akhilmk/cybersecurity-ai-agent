@@ -2,8 +2,6 @@
 
 An experimental project to learn **LangGraph** by building a real-world multi-agent cybersecurity system.
 
-> Based on [vitalii-honchar/cybersecurity-ai-agent](https://github.com/vitalii-honchar/cybersecurity-ai-agent).
-
 ## 🚀 Quick Start (UV)
 
 This project uses [uv](https://docs.astral.sh/uv/) for high-performance package management.
@@ -44,7 +42,8 @@ The system is built as a graph of specialized agents:
 This repository was initialized as a fresh start from the original source.
 
 **Original Author:** [Vitalii Honchar](https://github.com/vitalii-honchar)  
-**Original Repo:** [cybersecurity-ai-agent](https://github.com/vitalii-honchar/cybersecurity-ai-agent.git)
+**Original Repo:** [cybersecurity-ai-agent](https://github.com/vitalii-honchar/cybersecurity-ai-agent.git)  
+**Blog Post:** [How to build a ReAct Agent](https://www.vitaliihonchar.com/insights/how-to-build-react-agent)
 
 To pull latest updates from the original source:
 ```bash
